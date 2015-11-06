@@ -1,0 +1,1331 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Netatmo</title>
+    <style type="text/css">
+      body { 
+	font-family: Trebuchet MS, sans-serif;
+	font-size: 15px;
+	color: #444;
+	margin-right: 24px;
+}
+
+h1	{
+	font-size: 25px;
+}
+h2	{
+	font-size: 20px;
+}
+h3	{
+	font-size: 16px;
+	font-weight: bold;
+}
+hr	{
+	height: 1px;
+	border: 0;
+	color: #ddd;
+	background-color: #ddd;
+	display: none;
+}
+
+.app-desc {
+  clear: both;
+  margin-left: 20px;
+}
+.param-name {
+  width: 100%;
+}
+.license-info {
+  margin-left: 20px;
+}
+
+.license-url {
+  margin-left: 20px;
+}
+
+.model {
+  margin: 0 0 0px 20px;
+}
+
+.method {
+  margin-left: 20px;
+}
+
+.method-notes	{
+	margin: 10px 0 20px 0;
+	font-size: 90%;
+	color: #555;
+}
+
+pre {
+  padding: 10px;
+  margin-bottom: 2px;
+}
+
+.http-method {
+ text-transform: uppercase;
+}
+
+pre.get {
+  background-color: #0f6ab4;
+}
+
+pre.post {
+  background-color: #10a54a;
+}
+
+pre.put {
+  background-color: #c5862b;
+}
+
+pre.delete {
+  background-color: #a41e22;
+}
+
+.huge	{
+	color: #fff;
+}
+
+pre.example {
+  background-color: #f3f3f3;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+code {
+  white-space: pre;
+}
+
+.nickname {
+  font-weight: bold;
+}
+
+.method-path {
+  font-size: 1.5em;
+  background-color: #0f6ab4;
+}
+
+.up {
+  float:right;
+}
+
+.parameter {
+  width: 500px;
+}
+
+.param {
+  width: 500px;
+  padding: 10px 0 0 20px;
+  font-weight: bold;
+}
+
+.param-desc {
+  width: 700px;
+  padding: 0 0 0 20px;
+  color: #777;
+}
+
+.param-type {
+  font-style: italic;
+}
+
+.field-label {
+  padding: 0;
+  margin: 0;
+  clear: both;
+}
+
+.field-items	{
+	padding: 0 0 15px 0;
+	margin-bottom: 15px;
+}
+
+.return-type {
+  clear: both;
+  padding-bottom: 10px;
+}
+
+.param-header {
+  font-weight: bold;
+}
+
+.method-tags {
+  text-align: right;
+}
+
+.method-tag {
+  background: none repeat scroll 0% 0% #24A600;
+  border-radius: 3px;
+  padding: 2px 10px;
+  margin: 2px;
+  color: #FFF;
+  display: inline-block;
+  text-decoration: none;
+}
+    </style>
+  </head>
+  <body>
+  <h1>Netatmo</h1>
+    <div class="app-desc"><h3>Welcome to the Netatmo swagger on-line documentation !</h3>This site is a complement to the official <a href=\"https://dev.netatmo.com/\">Netatmo developper documentation</a> using swagger to bring interactivity and easy testing of requests with the \"try it\" button (authenticate with the authorization code 0Auth2 flow by clicking the authenticate button in the methods). You can find the source code for this site can be found in the project <a href=\"https://github.com/cbornet/netatmo-swagger-ui\">netatmo-swagger-ui</a>. You can also use the online <a href=\"./swagger.json\">swagger declaration</a> file to generate code or static documentation (see <a href=\"https://github.com/cbornet/netatmo-swagger-api\">netatmo-swagger-api</a>).</div>
+    <div class="app-desc">More information: <a href="https://helloreverb.com">https://helloreverb.com</a></div>
+    <div class="app-desc">Contact Info: <a href="hello@helloreverb.com">hello@helloreverb.com</a></div>
+    <div class="app-desc">Version: 1.0.0</div>
+    <div class="license-info">All rights reserved</div>
+    <div class="license-url">http://apache.org/licenses/LICENSE-2.0.html</div>
+  <h2>Access</h2>
+  
+
+  <h2><a name="__Methods">Methods</a></h2>
+  [ Jump to <a href="#__Models">Models</a> ]
+
+  
+  <h2>Table of Contents </h2>
+  <div class="method-summary"></div>
+  
+  <ol>
+  
+  
+  
+  <li><a href="#createnewschedule"><code><span class="http-method">post</span> /createnewschedule</code></a></li>
+  
+  <li><a href="#devicelist"><code><span class="http-method">get</span> /devicelist</code></a></li>
+  
+  <li><a href="#getmeasure"><code><span class="http-method">get</span> /getmeasure</code></a></li>
+  
+  <li><a href="#getthermstate"><code><span class="http-method">get</span> /getthermstate</code></a></li>
+  
+  <li><a href="#getuser"><code><span class="http-method">get</span> /getuser</code></a></li>
+  
+  <li><a href="#partnerdevices"><code><span class="http-method">get</span> /partnerdevices</code></a></li>
+  
+  <li><a href="#setthermpoint"><code><span class="http-method">post</span> /setthermpoint</code></a></li>
+  
+  <li><a href="#switchschedule"><code><span class="http-method">post</span> /switchschedule</code></a></li>
+  
+  <li><a href="#syncschedule"><code><span class="http-method">post</span> /syncschedule</code></a></li>
+  
+  
+  
+  </ol>
+  
+
+  
+  
+  
+  
+  <div class="method"><a name="createnewschedule"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /createnewschedule</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">createnewschedule</span>)</div>
+    
+    <div class="method-notes">The method createnewschedule creates a new schedule stored in the backup list.</div>
+
+    
+
+    
+
+    
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">thermProgram (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; The thermostat program (zones and timetable) </div>
+    </div>  <!-- field-items -->
+    
+
+    
+
+    
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">deviceId (required)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; The relay id </div><div class="param">moduleId (required)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; The thermostat id </div>
+    </div>  <!-- field-items -->
+    
+
+    <!-- Remove Return type... unclear where this comes from;
+         for our swagger.json files, it is always empty and there is no boolean guard or hasReturnType
+         do we end up with a heading but not content
+
+    
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type"><a href="#">NANewScheduleResponse</a></div>
+    
+
+    Todo: process Response Object and its headers, schema, examples
+    -->
+
+    
+
+    
+
+    <h3 class="field-label">Responses</h3>
+    
+    <h4 class="field-label">200</h4>
+    Successful response
+    
+    
+  </div> <!-- method -->
+  <hr/>
+  
+  <div class="method"><a name="devicelist"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /devicelist</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">devicelist</span>)</div>
+    
+    <div class="method-notes">The method devicelist returns the list of devices owned by the user, and their modules.\nA device is identified by its _id (which is its mac address) and each device may have one, several or no modules, also identified by an _id.</div>
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">appType (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Defines which device type will be returned by devicelist. It could be app_thermostat or app_station (by default if not provided) </div><div class="param">deviceId (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Specify a device_id if you want to retrieve only this device informations. </div><div class="param">getFavorites (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; When set to \&quot;true\&quot;, the favorite devices of the user are returned. This flag is available only if the devices requested are Weather Stations. </div>
+    </div>  <!-- field-items -->
+    
+
+    <!-- Remove Return type... unclear where this comes from;
+         for our swagger.json files, it is always empty and there is no boolean guard or hasReturnType
+         do we end up with a heading but not content
+
+    
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type"><a href="#">NADeviceListResponse</a></div>
+    
+
+    Todo: process Response Object and its headers, schema, examples
+    -->
+
+    
+
+    
+
+    <h3 class="field-label">Responses</h3>
+    
+    <h4 class="field-label">200</h4>
+    Successful response
+    
+    
+  </div> <!-- method -->
+  <hr/>
+  
+  <div class="method"><a name="getmeasure"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /getmeasure</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">getmeasure</span>)</div>
+    
+    <div class="method-notes">The method getmeasure returns the measurements of a device or a module.</div>
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">deviceId (required)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Id of the device whose module&#39;s measurements you want to retrieve. This _id can be found in the user&#39;s devices field. </div><div class="param">moduleId (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; If you don&#39;t specify any module_id you will retrieve the device&#39;s measurements. If you specify a module_id you will retrieve the module&#39;s measurements. </div><div class="param">scale (required)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Defines the time interval between two measurements.\nPossible values :\nmax -&gt; every value stored will be returned\n30min -&gt; 1 value every 30 minutes\n1hour -&gt; 1 value every hour\n3hours -&gt; 1 value every 3 hours\n1day -&gt; 1 value per day\n1week -&gt; 1 value per week\n1month -&gt; 1 value per month </div><div class="param">type (required)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Sets the type of measurement you want to retrieve.\nThe different types of measurements must be given in a comma separated list of strings.\nExample: type=\&quot;Temperature,Humidity\&quot;\nDepending on the device&#39;s type and the scale, different measurements are available:\nFor Weather Station :\n\n  max -&gt; Temperature, CO2, Humidity, Pressure, Noise, Rain (if\nmodule_id is a rain sensor)\n\n  30min, 1hour, 3hours -&gt; Temperature, CO2, Humidity, Pressure,\nNoise, min_temp, max_temp, min_hum, max_hum, min_pressure, max_pressure, min_noise, max_noise, sum_rain (if module_id is a rain sensor)\n\n  1day, 1week, 1month -&gt; Temperature, Co2, Humidity, Pressure, Noise,\nmin_temp, date_min_temp, max_temp, date_max_temp, min_hum, date_min_hum, max_hum, date_max_hum, min_pressure, date_min_pressure, max_pressure, date_max_pressure, min_noise, date_min_noise, max_noise, date_max_noise, date_min_co2, date_max_co2, sum_rain (if module_id is a rain sensor)\nPlease note, the measurements sent in the response will be in the same order as in this list.\nAll measurements are expressed in metric units:\n\n  Temperature: Celsius\n\n  Humidity: %\n\n  Co2: ppm\n\n  Pressure: mbar\n\n  Noise: db\n\n  Rain: mm\n\nFor Thermostat:\n\n  max -&gt; Temperature, Sp_Temperature, BoilerOn, BoilerOff\n\n  30min, 1hour, 3hours -&gt; Temperature, Sp_Temperature, min_temp,\nmax_temp, sum_boiler_on, sum_boiler_off\n\n  1day, 1week, 1month -&gt; Temperature, min_temp, date_min_temp,\nmax_temp, sum_boiler_on, sum_boiler_off\n\n  where\n\nTemperature: Celsius\n\n  Sp_Temperature (temperature setpoint): Celsius\n\n  BoilerOn: Duration, since the previous data point, during which the\nboiler has been on (in seconds)\n\n  BoilerOff : Duration, since the previous data point, during which\nthe boiler has been off (in seconds).\n\n  sum_boiler_on: Total duration during which the boiler has been on,\nat a specific scale (in seconds).\n\n  sum_boiler_off: Total duration during which the boiler has been\noff, at a specific scale (in seconds). </div><div class="param">dateBegin (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Starting timestamp (utc) of the requested measurements.\nPlease note measurement retrieving is limited to 1024 measurements. </div><div class="param">dateEnd (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Ending timestamp (utc) of the request measurements.\nIf you want only the last measurement, do not provide date_begin, and set date_end to \&quot;last\&quot;. </div><div class="param">limit (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Limits the number of measurements returned (default &amp; max is 1024) </div><div class="param">optimize (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Allows you to choose the format of the answer.\nIf you build a mobile app and bandwith usage is an issue, use optimize = true.\nUse optimize = false, for an easier parse. In this case, values are indexed by sorted timestamp.\nExample of un-optimized response :\n{\&quot;status\&quot;: \&quot;ok\&quot;, \n  \&quot;body\&quot;: {\n    \&quot;1347575400\&quot;: [18.3,39],\n    \&quot;1347586200\&quot;: [20.6,48]\n  },\n\&quot;time_exec\&quot;: 0.012136936187744}\nIf optimize is set true, measurements are returned as an array of series of regularly spaced measurements. Each series is defined by a beginning time beg_time and a step between measurements, step_time:\n{\&quot;status\&quot;: \&quot;ok\&quot;,\n  \&quot;body\&quot;: [\n    {\&quot;beg_time\&quot;: 1347575400,\n     \&quot;step_time\&quot;: 10800,\n     \&quot;value\&quot;: \n        [[18.3,39],\n        [ 20.6,48]]\n    }],\n\&quot;time_exec\&quot;: 0.014238119125366}\nDefault value is true. </div><div class="param">realTime (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; In scales higher than max, since the data is aggregated, the timestamps returned are by default offset by +(scale/2).\nFor instance, if you ask for measurements at a daily scale, you will receive data timestamped at 12:00 if real_time is set to false (default case), and timestamped at 00:00 if real_time is set to true.\nNB : The servers always store data with real_time set to true and data are offset by this parameter AFTER having being time-filtered, thus you could have data after date_end if real_time is set to false. </div>
+    </div>  <!-- field-items -->
+    
+
+    <!-- Remove Return type... unclear where this comes from;
+         for our swagger.json files, it is always empty and there is no boolean guard or hasReturnType
+         do we end up with a heading but not content
+
+    
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type"><a href="#">NAMeasureResponse</a></div>
+    
+
+    Todo: process Response Object and its headers, schema, examples
+    -->
+
+    
+
+    
+
+    <h3 class="field-label">Responses</h3>
+    
+    <h4 class="field-label">200</h4>
+    Successful response
+    
+    
+  </div> <!-- method -->
+  <hr/>
+  
+  <div class="method"><a name="getthermstate"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /getthermstate</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">getthermstate</span>)</div>
+    
+    <div class="method-notes">The method getthermstate returns the last Thermostat measurements, its current weekly schedule, and, if present, its current manual temperature setpoint.</div>
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">deviceId (required)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; The relay id </div><div class="param">moduleId (required)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; The thermostat id </div>
+    </div>  <!-- field-items -->
+    
+
+    <!-- Remove Return type... unclear where this comes from;
+         for our swagger.json files, it is always empty and there is no boolean guard or hasReturnType
+         do we end up with a heading but not content
+
+    
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type"><a href="#">NAThermStateResponse</a></div>
+    
+
+    Todo: process Response Object and its headers, schema, examples
+    -->
+
+    
+
+    
+
+    <h3 class="field-label">Responses</h3>
+    
+    <h4 class="field-label">200</h4>
+    Successful response
+    
+    
+  </div> <!-- method -->
+  <hr/>
+  
+  <div class="method"><a name="getuser"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /getuser</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">getuser</span>)</div>
+    
+    <div class="method-notes">The method getuser returns information about a user such as prefered language, prefered units, and list of devices.</div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <!-- Remove Return type... unclear where this comes from;
+         for our swagger.json files, it is always empty and there is no boolean guard or hasReturnType
+         do we end up with a heading but not content
+
+    
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type"><a href="#">NAUserResponse</a></div>
+    
+
+    Todo: process Response Object and its headers, schema, examples
+    -->
+
+    
+
+    
+
+    <h3 class="field-label">Responses</h3>
+    
+    <h4 class="field-label">200</h4>
+    Successful response
+    
+    
+  </div> <!-- method -->
+  <hr/>
+  
+  <div class="method"><a name="partnerdevices"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /partnerdevices</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">partnerdevices</span>)</div>
+    
+    <div class="method-notes">The method partnerdevices returns the list of device_id to which your partner application has access to.</div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <!-- Remove Return type... unclear where this comes from;
+         for our swagger.json files, it is always empty and there is no boolean guard or hasReturnType
+         do we end up with a heading but not content
+
+    
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type"><a href="#">NAPartnerDevicesResponse</a></div>
+    
+
+    Todo: process Response Object and its headers, schema, examples
+    -->
+
+    
+
+    
+
+    <h3 class="field-label">Responses</h3>
+    
+    <h4 class="field-label">200</h4>
+    Successful response
+    
+    
+  </div> <!-- method -->
+  <hr/>
+  
+  <div class="method"><a name="setthermpoint"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /setthermpoint</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">setthermpoint</span>)</div>
+    
+    <div class="method-notes">The method setthermpoint changes the Thermostat manual temperature setpoint.</div>
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">deviceId (required)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; The relay id </div><div class="param">moduleId (required)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; The thermostat id </div><div class="param">setpointMode (required)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Chosen setpoint_mode </div><div class="param">setpointEndtime (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; When using the manual or max setpoint_mode, this parameter defines when the setpoint expires. </div><div class="param">setpointTemp (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; When using the manual setpoint_mode, this parameter defines the temperature setpoint (in Celcius) to use. </div>
+    </div>  <!-- field-items -->
+    
+
+    <!-- Remove Return type... unclear where this comes from;
+         for our swagger.json files, it is always empty and there is no boolean guard or hasReturnType
+         do we end up with a heading but not content
+
+    
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type"><a href="#">NAOkResponse</a></div>
+    
+
+    Todo: process Response Object and its headers, schema, examples
+    -->
+
+    
+
+    
+
+    <h3 class="field-label">Responses</h3>
+    
+    <h4 class="field-label">200</h4>
+    Successful response
+    
+    
+  </div> <!-- method -->
+  <hr/>
+  
+  <div class="method"><a name="switchschedule"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /switchschedule</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">switchschedule</span>)</div>
+    
+    <div class="method-notes">The method switchschedule switches the Thermostat&#39;s schedule to another existing schedule.</div>
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">deviceId (required)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; The relay id </div><div class="param">moduleId (required)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; The thermostat id </div><div class="param">scheduleId (required)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; The schedule id. It can be found in the getthermstate response, under the keys \&quot;therm_program_backup\&quot; and \&quot;therm_program\&quot;. </div>
+    </div>  <!-- field-items -->
+    
+
+    <!-- Remove Return type... unclear where this comes from;
+         for our swagger.json files, it is always empty and there is no boolean guard or hasReturnType
+         do we end up with a heading but not content
+
+    
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type"><a href="#">NAOkResponse</a></div>
+    
+
+    Todo: process Response Object and its headers, schema, examples
+    -->
+
+    
+
+    
+
+    <h3 class="field-label">Responses</h3>
+    
+    <h4 class="field-label">200</h4>
+    Successful response
+    
+    
+  </div> <!-- method -->
+  <hr/>
+  
+  <div class="method"><a name="syncschedule"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /syncschedule</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">syncschedule</span>)</div>
+    
+    <div class="method-notes">The method syncschedule changes the Thermostat weekly schedule.</div>
+
+    
+
+    
+
+    
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">thermProgram (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; The thermostat program (zones, timetable and name) </div>
+    </div>  <!-- field-items -->
+    
+
+    
+
+    
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">deviceId (required)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; The relay id </div><div class="param">moduleId (required)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; The thermostat id </div>
+    </div>  <!-- field-items -->
+    
+
+    <!-- Remove Return type... unclear where this comes from;
+         for our swagger.json files, it is always empty and there is no boolean guard or hasReturnType
+         do we end up with a heading but not content
+
+    
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type"><a href="#">NAOkResponse</a></div>
+    
+
+    Todo: process Response Object and its headers, schema, examples
+    -->
+
+    
+
+    
+
+    <h3 class="field-label">Responses</h3>
+    
+    <h4 class="field-label">200</h4>
+    Successful response
+    
+    
+  </div> <!-- method -->
+  <hr/>
+  
+  
+  
+  
+
+  <div class="up"><a href="#__Models">Up</a></div>
+  <h2><a name="__Models">Models</a></h2>
+  [ Jump to <a href="#__Methods">Methods</a> ]
+
+  <h2>Table of Contents</h2>
+  <ol>
+  
+  
+    <li><a href="#NAResponse"><code>NAResponse</code></a></li>
+  
+  
+  
+    <li><a href="#NAOkResponse"><code>NAOkResponse</code></a></li>
+  
+  
+  
+    <li><a href="#NAUserResponse"><code>NAUserResponse</code></a></li>
+  
+  
+  
+    <li><a href="#NADeviceListResponse"><code>NADeviceListResponse</code></a></li>
+  
+  
+  
+    <li><a href="#NAMeasureResponse"><code>NAMeasureResponse</code></a></li>
+  
+  
+  
+    <li><a href="#NAThermStateResponse"><code>NAThermStateResponse</code></a></li>
+  
+  
+  
+    <li><a href="#NANewScheduleResponse"><code>NANewScheduleResponse</code></a></li>
+  
+  
+  
+    <li><a href="#NAPartnerDevicesResponse"><code>NAPartnerDevicesResponse</code></a></li>
+  
+  
+  
+    <li><a href="#NAUserBody"><code>NAUserBody</code></a></li>
+  
+  
+  
+    <li><a href="#NADeviceListBody"><code>NADeviceListBody</code></a></li>
+  
+  
+  
+    <li><a href="#NAMeasureBodyElem"><code>NAMeasureBodyElem</code></a></li>
+  
+  
+  
+    <li><a href="#NAThermStateBody"><code>NAThermStateBody</code></a></li>
+  
+  
+  
+    <li><a href="#NANewScheduleBody"><code>NANewScheduleBody</code></a></li>
+  
+  
+  
+    <li><a href="#NAUserAdministrative"><code>NAUserAdministrative</code></a></li>
+  
+  
+  
+    <li><a href="#NADate"><code>NADate</code></a></li>
+  
+  
+  
+    <li><a href="#NADevice"><code>NADevice</code></a></li>
+  
+  
+  
+    <li><a href="#NAModule"><code>NAModule</code></a></li>
+  
+  
+  
+    <li><a href="#NAHouseModel"><code>NAHouseModel</code></a></li>
+  
+  
+  
+    <li><a href="#NAHouseModelCa"><code>NAHouseModelCa</code></a></li>
+  
+  
+  
+    <li><a href="#NAStation"><code>NAStation</code></a></li>
+  
+  
+  
+    <li><a href="#NALinkStation"><code>NALinkStation</code></a></li>
+  
+  
+  
+    <li><a href="#NAPidAlgo"><code>NAPidAlgo</code></a></li>
+  
+  
+  
+    <li><a href="#NAPlace"><code>NAPlace</code></a></li>
+  
+  
+  
+    <li><a href="#NASetpoint"><code>NASetpoint</code></a></li>
+  
+  
+  
+    <li><a href="#NAThermProgram"><code>NAThermProgram</code></a></li>
+  
+  
+  
+    <li><a href="#NAZone"><code>NAZone</code></a></li>
+  
+  
+  
+    <li><a href="#NATimeTableItem"><code>NATimeTableItem</code></a></li>
+  
+  
+  
+    <li><a href="#NAHeatingSystem"><code>NAHeatingSystem</code></a></li>
+  
+  
+  
+    <li><a href="#NASimpleAlgo"><code>NASimpleAlgo</code></a></li>
+  
+  
+  
+    <li><a href="#NADashboardData"><code>NADashboardData</code></a></li>
+  
+  
+  
+    <li><a href="#NAThermMeasure"><code>NAThermMeasure</code></a></li>
+  
+  
+  
+    <li><a href="#NAObject"><code>NAObject</code></a></li>
+  
+  
+  </ol>
+
+  
+  
+  <div class="model">
+    <h3 class="field-label"><a name="NAResponse">NAResponse</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">status </div><div class="param-desc"><span class="param-type">String</span> </div>
+      <div class="param">time_exec </div><div class="param-desc"><span class="param-type">Double</span> </div>
+      <div class="param">time_server </div><div class="param-desc"><span class="param-type">Integer</span> </div>
+      
+    </div>  <!-- field-items -->
+  </div>
+  
+  
+  
+  <div class="model">
+    <h3 class="field-label"><a name="NAOkResponse">NAOkResponse</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">time_server </div><div class="param-desc"><span class="param-type">Integer</span> </div>
+      <div class="param">time_exec </div><div class="param-desc"><span class="param-type">Double</span> </div>
+      <div class="param">body </div><div class="param-desc"><span class="param-type">String</span> </div>
+      <div class="param">status </div><div class="param-desc"><span class="param-type">String</span> </div>
+      
+    </div>  <!-- field-items -->
+  </div>
+  
+  
+  
+  <div class="model">
+    <h3 class="field-label"><a name="NAUserResponse">NAUserResponse</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">time_server </div><div class="param-desc"><span class="param-type">Integer</span> </div>
+      <div class="param">time_exec </div><div class="param-desc"><span class="param-type">Double</span> </div>
+      <div class="param">body </div><div class="param-desc"><span class="param-type">NAUserBody</span> </div>
+      <div class="param">status </div><div class="param-desc"><span class="param-type">String</span> </div>
+      
+    </div>  <!-- field-items -->
+  </div>
+  
+  
+  
+  <div class="model">
+    <h3 class="field-label"><a name="NADeviceListResponse">NADeviceListResponse</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">time_server </div><div class="param-desc"><span class="param-type">Integer</span> </div>
+      <div class="param">time_exec </div><div class="param-desc"><span class="param-type">Double</span> </div>
+      <div class="param">body </div><div class="param-desc"><span class="param-type">NADeviceListBody</span> </div>
+      <div class="param">status </div><div class="param-desc"><span class="param-type">String</span> </div>
+      
+    </div>  <!-- field-items -->
+  </div>
+  
+  
+  
+  <div class="model">
+    <h3 class="field-label"><a name="NAMeasureResponse">NAMeasureResponse</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">time_server </div><div class="param-desc"><span class="param-type">Integer</span> </div>
+      <div class="param">time_exec </div><div class="param-desc"><span class="param-type">Double</span> </div>
+      <div class="param">body </div><div class="param-desc"><span class="param-type">array[NAMeasureBodyElem]</span> </div>
+      <div class="param">status </div><div class="param-desc"><span class="param-type">String</span> </div>
+      
+    </div>  <!-- field-items -->
+  </div>
+  
+  
+  
+  <div class="model">
+    <h3 class="field-label"><a name="NAThermStateResponse">NAThermStateResponse</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">time_server </div><div class="param-desc"><span class="param-type">Integer</span> </div>
+      <div class="param">time_exec </div><div class="param-desc"><span class="param-type">Double</span> </div>
+      <div class="param">body </div><div class="param-desc"><span class="param-type">NAThermStateBody</span> </div>
+      <div class="param">status </div><div class="param-desc"><span class="param-type">String</span> </div>
+      
+    </div>  <!-- field-items -->
+  </div>
+  
+  
+  
+  <div class="model">
+    <h3 class="field-label"><a name="NANewScheduleResponse">NANewScheduleResponse</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">time_server </div><div class="param-desc"><span class="param-type">Integer</span> </div>
+      <div class="param">time_exec </div><div class="param-desc"><span class="param-type">Double</span> </div>
+      <div class="param">body </div><div class="param-desc"><span class="param-type">NANewScheduleBody</span> </div>
+      <div class="param">status </div><div class="param-desc"><span class="param-type">String</span> </div>
+      
+    </div>  <!-- field-items -->
+  </div>
+  
+  
+  
+  <div class="model">
+    <h3 class="field-label"><a name="NAPartnerDevicesResponse">NAPartnerDevicesResponse</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">time_server </div><div class="param-desc"><span class="param-type">Integer</span> </div>
+      <div class="param">time_exec </div><div class="param-desc"><span class="param-type">Double</span> </div>
+      <div class="param">body </div><div class="param-desc"><span class="param-type">array[String]</span> </div>
+      <div class="param">status </div><div class="param-desc"><span class="param-type">String</span> </div>
+      
+    </div>  <!-- field-items -->
+  </div>
+  
+  
+  
+  <div class="model">
+    <h3 class="field-label"><a name="NAUserBody">NAUserBody</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">_id </div><div class="param-desc"><span class="param-type">String</span> </div>
+      <div class="param">administrative </div><div class="param-desc"><span class="param-type">NAUserAdministrative</span> Contains administrative information related to the user</div>
+      <div class="param">date_creation </div><div class="param-desc"><span class="param-type">NADate</span> </div>
+      <div class="param">devices </div><div class="param-desc"><span class="param-type">array[String]</span> An array of string containing the ids of the devices owned by the user</div>
+      <div class="param">friend_devices </div><div class="param-desc"><span class="param-type">array[String]</span> An array of string containing the ids of the devices on which the user has a \&quot;guest\&quot; access</div>
+      <div class="param">mail </div><div class="param-desc"><span class="param-type">String</span> </div>
+      <div class="param">timeline_not_read </div><div class="param-desc"><span class="param-type">Integer</span> </div>
+      <div class="param">timeline_size </div><div class="param-desc"><span class="param-type">Integer</span> </div>
+      
+    </div>  <!-- field-items -->
+  </div>
+  
+  
+  
+  <div class="model">
+    <h3 class="field-label"><a name="NADeviceListBody">NADeviceListBody</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">devices </div><div class="param-desc"><span class="param-type">array[NADevice]</span> </div>
+      <div class="param">modules </div><div class="param-desc"><span class="param-type">array[NAModule]</span> </div>
+      
+    </div>  <!-- field-items -->
+  </div>
+  
+  
+  
+  <div class="model">
+    <h3 class="field-label"><a name="NAMeasureBodyElem">NAMeasureBodyElem</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">beg_time </div><div class="param-desc"><span class="param-type">Integer</span> </div>
+      <div class="param">step_time </div><div class="param-desc"><span class="param-type">Integer</span> </div>
+      <div class="param">value </div><div class="param-desc"><span class="param-type">array[array[Float]]</span> </div>
+      
+    </div>  <!-- field-items -->
+  </div>
+  
+  
+  
+  <div class="model">
+    <h3 class="field-label"><a name="NAThermStateBody">NAThermStateBody</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">setpoint </div><div class="param-desc"><span class="param-type">NASetpoint</span> </div>
+      <div class="param">setpoint_order </div><div class="param-desc"><span class="param-type">NASetpoint</span> </div>
+      <div class="param">therm_program </div><div class="param-desc"><span class="param-type">NAThermProgram</span> </div>
+      <div class="param">therm_program_backup </div><div class="param-desc"><span class="param-type">array[NAThermProgram]</span> </div>
+      <div class="param">therm_program_order </div><div class="param-desc"><span class="param-type">NAThermProgram</span> </div>
+      <div class="param">therm_orientation </div><div class="param-desc"><span class="param-type">Integer</span> </div>
+      <div class="param">therm_relay_cmd </div><div class="param-desc"><span class="param-type">Integer</span> </div>
+      <div class="param">battery_vp </div><div class="param-desc"><span class="param-type">Integer</span> </div>
+      <div class="param">rf_status </div><div class="param-desc"><span class="param-type">Integer</span> </div>
+      <div class="param">plug_connected_boiler </div><div class="param-desc"><span class="param-type">Boolean</span> </div>
+      <div class="param">udp_conn </div><div class="param-desc"><span class="param-type">Boolean</span> </div>
+      <div class="param">last_therm_seen </div><div class="param-desc"><span class="param-type">Integer</span> </div>
+      <div class="param">last_plug_seen </div><div class="param-desc"><span class="param-type">Integer</span> </div>
+      <div class="param">wifi_status </div><div class="param-desc"><span class="param-type">Integer</span> </div>
+      <div class="param">measured </div><div class="param-desc"><span class="param-type">NAThermMeasure</span> </div>
+      
+    </div>  <!-- field-items -->
+  </div>
+  
+  
+  
+  <div class="model">
+    <h3 class="field-label"><a name="NANewScheduleBody">NANewScheduleBody</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">schedule_id </div><div class="param-desc"><span class="param-type">String</span> Id of the schedule. It can be use with the method \&quot;switchschedule\&quot;</div>
+      
+    </div>  <!-- field-items -->
+  </div>
+  
+  
+  
+  <div class="model">
+    <h3 class="field-label"><a name="NAUserAdministrative">NAUserAdministrative</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">country </div><div class="param-desc"><span class="param-type">String</span> user country</div>
+      <div class="param">lang </div><div class="param-desc"><span class="param-type">String</span> user locale</div>
+      <div class="param">reg_locale </div><div class="param-desc"><span class="param-type">String</span> user regional preferences (used for displaying date)</div>
+      <div class="param">unit </div><div class="param-desc"><span class="param-type">String</span> 0 -&gt; metric system, 1 -&gt; imperial system</div>
+      <div class="param">windunit </div><div class="param-desc"><span class="param-type">String</span> 0 -&gt; kph, 1 -&gt; mph, 2 -&gt; ms, 3 -&gt; beaufort, 4 -&gt; knot</div>
+      <div class="param">pressureunit </div><div class="param-desc"><span class="param-type">String</span> 0 -&gt; mbar, 1 -&gt; inHg, 2 -&gt; mmHg</div>
+      <div class="param">feel_like_algo </div><div class="param-desc"><span class="param-type">String</span> algorithm used to compute feel like temperature, 0 -&gt; humidex, 1 -&gt; heat-index</div>
+      
+    </div>  <!-- field-items -->
+  </div>
+  
+  
+  
+  <div class="model">
+    <h3 class="field-label"><a name="NADate">NADate</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">sec </div><div class="param-desc"><span class="param-type">Integer</span> </div>
+      <div class="param">usec </div><div class="param-desc"><span class="param-type">Integer</span> </div>
+      
+    </div>  <!-- field-items -->
+  </div>
+  
+  
+  
+  <div class="model">
+    <h3 class="field-label"><a name="NADevice">NADevice</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">_id </div><div class="param-desc"><span class="param-type">String</span> </div>
+      <div class="param">behavior </div><div class="param-desc"><span class="param-type">Integer</span> </div>
+      <div class="param">cipher_id </div><div class="param-desc"><span class="param-type">String</span> </div>
+      <div class="param">date_setup </div><div class="param-desc"><span class="param-type">NADate</span> </div>
+      <div class="param">firmware </div><div class="param-desc"><span class="param-type">Integer</span> </div>
+      <div class="param">hw_version </div><div class="param-desc"><span class="param-type">Integer</span> </div>
+      <div class="param">heating_system </div><div class="param-desc"><span class="param-type">NAHeatingSystem</span> </div>
+      <div class="param">house_model </div><div class="param-desc"><span class="param-type">NAHouseModel</span> </div>
+      <div class="param">ip </div><div class="param-desc"><span class="param-type">String</span> </div>
+      <div class="param">last_fw_update </div><div class="param-desc"><span class="param-type">Integer</span> </div>
+      <div class="param">last_radio_store </div><div class="param-desc"><span class="param-type">Integer</span> </div>
+      <div class="param">last_status_store </div><div class="param-desc"><span class="param-type">Integer</span> </div>
+      <div class="param">last_upgrade </div><div class="param-desc"><span class="param-type">Integer</span> </div>
+      <div class="param">module_name </div><div class="param-desc"><span class="param-type">String</span> </div>
+      <div class="param">modules </div><div class="param-desc"><span class="param-type">array[String]</span> It lists which modules are linked with this device</div>
+      <div class="param">place </div><div class="param-desc"><span class="param-type">NAPlace</span> </div>
+      <div class="param">setpoint </div><div class="param-desc"><span class="param-type">Object</span> </div>
+      <div class="param">setpoint_default_duration </div><div class="param-desc"><span class="param-type">Integer</span> </div>
+      <div class="param">setpoint_order </div><div class="param-desc"><span class="param-type">map[String, array[NAObject]]</span> </div>
+      <div class="param">public_ext_data </div><div class="param-desc"><span class="param-type">Boolean</span> </div>
+      <div class="param">station_name </div><div class="param-desc"><span class="param-type">String</span> </div>
+      <div class="param">therm_program </div><div class="param-desc"><span class="param-type">map[String, NAThermProgram]</span> </div>
+      <div class="param">therm_program_backup </div><div class="param-desc"><span class="param-type">map[String, array[NAThermProgram]]</span> </div>
+      <div class="param">therm_program_order </div><div class="param-desc"><span class="param-type">map[String, array[NAObject]]</span> </div>
+      <div class="param">type </div><div class="param-desc"><span class="param-type">String</span> Included in every device or module. It defines the type of the device/module. Its values are among :\nNAMain : for the base station\nNAModule1 : for the outdoor module\nNAModule4 : for the additionnal indoor module\nNAModule3 : for the rain gauge module\nNAPlug : for the thermostat relay/plug\nNATherm1 : for the thermostat module</div>
+      <div class="param">user_owner </div><div class="param-desc"><span class="param-type">array[String]</span> </div>
+      <div class="param">udp_conn </div><div class="param-desc"><span class="param-type">Boolean</span> </div>
+      <div class="param">wifi_status </div><div class="param-desc"><span class="param-type">Integer</span> It contains the current wifi status. The different thresholds to take into account are\nRSSI_THRESHOLD_0 = 86 bad signal\nRSSI_THRESHOLD_1 = 71 middle quality signal\nRSSI_THRESHOLD_2 = 56 good signal</div>
+      <div class="param">new_feature_avail </div><div class="param-desc"><span class="param-type">Boolean</span> </div>
+      <div class="param">first_pid_avail </div><div class="param-desc"><span class="param-type">Boolean</span> </div>
+      <div class="param">data_type </div><div class="param-desc"><span class="param-type">array[String]</span> </div>
+      
+    </div>  <!-- field-items -->
+  </div>
+  
+  
+  
+  <div class="model">
+    <h3 class="field-label"><a name="NAModule">NAModule</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">_id </div><div class="param-desc"><span class="param-type">String</span> </div>
+      <div class="param">date_setup </div><div class="param-desc"><span class="param-type">NADate</span> </div>
+      <div class="param">firmware </div><div class="param-desc"><span class="param-type">Integer</span> </div>
+      <div class="param">type </div><div class="param-desc"><span class="param-type">String</span> Included in every device or module. It defines the type of the device/module. Its values are among :\nNAMain : for the base station\nNAModule1 : for the outdoor module\nNAModule4 : for the additionnal indoor module\nNAModule3 : for the rain gauge module\nNAPlug : for the thermostat relay/plug\nNATherm1 : for the thermostat module</div>
+      <div class="param">module_name </div><div class="param-desc"><span class="param-type">String</span> </div>
+      <div class="param">main_device </div><div class="param-desc"><span class="param-type">String</span> </div>
+      <div class="param">last_message </div><div class="param-desc"><span class="param-type">Integer</span> </div>
+      <div class="param">last_seen </div><div class="param-desc"><span class="param-type">Integer</span> </div>
+      <div class="param">public_ext_data </div><div class="param-desc"><span class="param-type">Boolean</span> </div>
+      <div class="param">rf_status </div><div class="param-desc"><span class="param-type">Integer</span> \&quot;It contains the current radio status. The different thresholds to take into account are :\&quot; |\nRADIO_THRESHOLD_SIGNAL_LOW = 90 \nRADIO_THRESHOLD_SIGNAL_MEDIUM = 80\nRADIO_THRESHOLD_SIGNAL_HIGH = 70\nRADIO_THRESHOLD_SIGNAL_FULL = 60</div>
+      <div class="param">battery_vp </div><div class="param-desc"><span class="param-type">Integer</span> It contains the current battery status. The threshold depends on the kind of module, below is the list of the different threshold to take into account according the module type.\n\&quot;Indoor module Battery range: 6000 ... 4200\&quot; |\nINDOOR_BATTERY_LEVEL_FULL = 5640\nINDOOR_BATTERY_LEVEL_HIGH = 5280\nINDOOR_BATTERY_LEVEL_MEDIUM = 4920\nINDOOR_BATTERY_LEVEL_LOW = 4560\n\&quot;Below 4560: very low\&quot; |\n  \n\&quot;Raingauge and outdoor module Battery range: 6000 ... 3600\&quot; |\nBATTERY_LEVEL_FULL = 5500\nBATTERY_LEVEL_HIGH = 5000\nBATTERY_LEVEL_MEDIUM = 4500\nBATTERY_LEVEL_LOW = 4000\n\&quot;Below 4000: very low\&quot; |\n  \n\&quot;Thermostat Battery range: 4500 ... 3000\&quot; |\nTHERMOSTAT_BATTERY_LEVEL_FULL = 4100\nTHERMOSTAT_BATTERY_LEVEL_HIGH = 3600\nTHERMOSTAT_BATTERY_LEVEL_MEDIUM = 3300\nTHERMOSTAT_BATTERY_LEVEL_LOW = 3000\n\&quot;Below 3000: very low\&quot;</div>
+      <div class="param">therm_orientation </div><div class="param-desc"><span class="param-type">Integer</span> </div>
+      <div class="param">therm_relay_cmd </div><div class="param-desc"><span class="param-type">Integer</span> </div>
+      <div class="param">dashboard_data </div><div class="param-desc"><span class="param-type">NADashboardData</span> It contains all the measurements that can be displayed on the dashboard</div>
+      <div class="param">data_type </div><div class="param-desc"><span class="param-type">array[String]</span> </div>
+      
+    </div>  <!-- field-items -->
+  </div>
+  
+  
+  
+  <div class="model">
+    <h3 class="field-label"><a name="NAHouseModel">NAHouseModel</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">algo_type </div><div class="param-desc"><span class="param-type">String</span> </div>
+      <div class="param">ca </div><div class="param-desc"><span class="param-type">NAHouseModelCa</span> </div>
+      <div class="param">ext_temps </div><div class="param-desc"><span class="param-type">map[String, Integer]</span> </div>
+      <div class="param">first_anticipate_avail </div><div class="param-desc"><span class="param-type">Boolean</span> </div>
+      <div class="param">first_pid_avail </div><div class="param-desc"><span class="param-type">Boolean</span> </div>
+      <div class="param">gefs </div><div class="param-desc"><span class="param-type">NAStation</span> </div>
+      <div class="param">in_use </div><div class="param-desc"><span class="param-type">String</span> </div>
+      <div class="param">last_compute_try </div><div class="param-desc"><span class="param-type">NADate</span> </div>
+      <div class="param">link_station </div><div class="param-desc"><span class="param-type">NALinkStation</span> </div>
+      <div class="param">pid_algo </div><div class="param-desc"><span class="param-type">NAPidAlgo</span> </div>
+      <div class="param">station </div><div class="param-desc"><span class="param-type">NAStation</span> </div>
+      <div class="param">prefered_algo_type </div><div class="param-desc"><span class="param-type">String</span> </div>
+      <div class="param">simple_algo </div><div class="param-desc"><span class="param-type">NASimpleAlgo</span> </div>
+      <div class="param">time </div><div class="param-desc"><span class="param-type">NADate</span> </div>
+      <div class="param">station_firsttime_anticipate </div><div class="param-desc"><span class="param-type">Boolean</span> </div>
+      <div class="param">time_algo_changed </div><div class="param-desc"><span class="param-type">Integer</span> </div>
+      <div class="param">time_pid_computed </div><div class="param-desc"><span class="param-type">Integer</span> </div>
+      
+    </div>  <!-- field-items -->
+  </div>
+  
+  
+  
+  <div class="model">
+    <h3 class="field-label"><a name="NAHouseModelCa">NAHouseModelCa</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">te </div><div class="param-desc"><span class="param-type">Double</span> </div>
+      <div class="param">ti </div><div class="param-desc"><span class="param-type">Integer</span> </div>
+      <div class="param">so </div><div class="param-desc"><span class="param-type">String</span> </div>
+      
+    </div>  <!-- field-items -->
+  </div>
+  
+  
+  
+  <div class="model">
+    <h3 class="field-label"><a name="NAStation">NAStation</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">lag_down </div><div class="param-desc"><span class="param-type">Integer</span> </div>
+      <div class="param">lag_up </div><div class="param-desc"><span class="param-type">Integer</span> </div>
+      <div class="param">off_overshoot </div><div class="param-desc"><span class="param-type">Float</span> </div>
+      <div class="param">on_overshoot </div><div class="param-desc"><span class="param-type">Float</span> </div>
+      <div class="param">pk </div><div class="param-desc"><span class="param-type">Integer</span> </div>
+      <div class="param">tau </div><div class="param-desc"><span class="param-type">Integer</span> </div>
+      
+    </div>  <!-- field-items -->
+  </div>
+  
+  
+  
+  <div class="model">
+    <h3 class="field-label"><a name="NALinkStation">NALinkStation</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">mac </div><div class="param-desc"><span class="param-type">String</span> </div>
+      <div class="param">ext </div><div class="param-desc"><span class="param-type">String</span> </div>
+      <div class="param">Temperature </div><div class="param-desc"><span class="param-type">Float</span> </div>
+      
+    </div>  <!-- field-items -->
+  </div>
+  
+  
+  
+  <div class="model">
+    <h3 class="field-label"><a name="NAPidAlgo">NAPidAlgo</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">gain </div><div class="param-desc"><span class="param-type">Integer</span> </div>
+      <div class="param">period </div><div class="param-desc"><span class="param-type">Integer</span> </div>
+      <div class="param">td </div><div class="param-desc"><span class="param-type">Integer</span> </div>
+      <div class="param">ti </div><div class="param-desc"><span class="param-type">Integer</span> </div>
+      
+    </div>  <!-- field-items -->
+  </div>
+  
+  
+  
+  <div class="model">
+    <h3 class="field-label"><a name="NAPlace">NAPlace</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">city </div><div class="param-desc"><span class="param-type">String</span> </div>
+      <div class="param">altitude </div><div class="param-desc"><span class="param-type">Float</span> </div>
+      <div class="param">country </div><div class="param-desc"><span class="param-type">String</span> </div>
+      <div class="param">from_ip </div><div class="param-desc"><span class="param-type">Boolean</span> </div>
+      <div class="param">improveLocProposed </div><div class="param-desc"><span class="param-type">Boolean</span> </div>
+      <div class="param">location </div><div class="param-desc"><span class="param-type">array[Double]</span> </div>
+      <div class="param">timezone </div><div class="param-desc"><span class="param-type">String</span> </div>
+      <div class="param">trust_location </div><div class="param-desc"><span class="param-type">Boolean</span> </div>
+      
+    </div>  <!-- field-items -->
+  </div>
+  
+  
+  
+  <div class="model">
+    <h3 class="field-label"><a name="NASetpoint">NASetpoint</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">setpoint_temp </div><div class="param-desc"><span class="param-type">Float</span> </div>
+      <div class="param">setpoint_endtime </div><div class="param-desc"><span class="param-type">Integer</span> </div>
+      <div class="param">setpoint_mode </div><div class="param-desc"><span class="param-type">String</span> </div>
+      
+    </div>  <!-- field-items -->
+  </div>
+  
+  
+  
+  <div class="model">
+    <h3 class="field-label"><a name="NAThermProgram">NAThermProgram</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">program_id </div><div class="param-desc"><span class="param-type">String</span> </div>
+      <div class="param">name </div><div class="param-desc"><span class="param-type">String</span> </div>
+      <div class="param">zones </div><div class="param-desc"><span class="param-type">array[NAZone]</span> </div>
+      <div class="param">timetable </div><div class="param-desc"><span class="param-type">array[NATimeTableItem]</span> </div>
+      <div class="param">selected </div><div class="param-desc"><span class="param-type">Boolean</span> </div>
+      
+    </div>  <!-- field-items -->
+  </div>
+  
+  
+  
+  <div class="model">
+    <h3 class="field-label"><a name="NAZone">NAZone</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">id </div><div class="param-desc"><span class="param-type">Integer</span> </div>
+      <div class="param">type </div><div class="param-desc"><span class="param-type">Integer</span> </div>
+      <div class="param">name </div><div class="param-desc"><span class="param-type">String</span> </div>
+      <div class="param">temp </div><div class="param-desc"><span class="param-type">Float</span> </div>
+      
+    </div>  <!-- field-items -->
+  </div>
+  
+  
+  
+  <div class="model">
+    <h3 class="field-label"><a name="NATimeTableItem">NATimeTableItem</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">id </div><div class="param-desc"><span class="param-type">Integer</span> </div>
+      <div class="param">m_offset </div><div class="param-desc"><span class="param-type">Integer</span> </div>
+      
+    </div>  <!-- field-items -->
+  </div>
+  
+  
+  
+  <div class="model">
+    <h3 class="field-label"><a name="NAHeatingSystem">NAHeatingSystem</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">heating_energy </div><div class="param-desc"><span class="param-type">String</span> </div>
+      <div class="param">heating_system_window_seen </div><div class="param-desc"><span class="param-type">Boolean</span> </div>
+      
+    </div>  <!-- field-items -->
+  </div>
+  
+  
+  
+  <div class="model">
+    <h3 class="field-label"><a name="NASimpleAlgo">NASimpleAlgo</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">high_deadband </div><div class="param-desc"><span class="param-type">Integer</span> </div>
+      
+    </div>  <!-- field-items -->
+  </div>
+  
+  
+  
+  <div class="model">
+    <h3 class="field-label"><a name="NADashboardData">NADashboardData</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">time_utc </div><div class="param-desc"><span class="param-type">Integer</span> </div>
+      <div class="param">device_id </div><div class="param-desc"><span class="param-type">Float</span> </div>
+      <div class="param">BoilerOn </div><div class="param-desc"><span class="param-type">Integer</span> </div>
+      <div class="param">BoilerOff </div><div class="param-desc"><span class="param-type">Integer</span> </div>
+      <div class="param">Temperature </div><div class="param-desc"><span class="param-type">Float</span> Last temperature measure @ time_utc (in °C)</div>
+      <div class="param">date_max_temp </div><div class="param-desc"><span class="param-type">Integer</span> Timestamp when max temperature was measured</div>
+      <div class="param">date_min_temp </div><div class="param-desc"><span class="param-type">Integer</span> Timestamp when min temperature was measured</div>
+      <div class="param">min_temp </div><div class="param-desc"><span class="param-type">Float</span> Max temperature of the day (measured @ date_max_temp)</div>
+      <div class="param">max_temp </div><div class="param-desc"><span class="param-type">Float</span> Min temperature of the day (measured @ date_min_temp)</div>
+      <div class="param">AbsolutePressure </div><div class="param-desc"><span class="param-type">Float</span> Real measured pressure @ time_utc (in mb)</div>
+      <div class="param">CO2 </div><div class="param-desc"><span class="param-type">Float</span> Last Co2 measured @ time_utc (in ppm)</div>
+      <div class="param">Humidity </div><div class="param-desc"><span class="param-type">Float</span> Last humidity measured @ time_utc (in %)</div>
+      <div class="param">Noise </div><div class="param-desc"><span class="param-type">Float</span> Last noise measured @ time_utc (in db)</div>
+      <div class="param">Pressure </div><div class="param-desc"><span class="param-type">Float</span> Last Sea level pressure measured @ time_utc (in mb)</div>
+      <div class="param">Rain </div><div class="param-desc"><span class="param-type">Integer</span> Last rain measured (in mm)</div>
+      <div class="param">sum_rain_1 </div><div class="param-desc"><span class="param-type">Integer</span> Amount of rain in last hour</div>
+      <div class="param">sum_rain_24 </div><div class="param-desc"><span class="param-type">Integer</span> Amount of rain today</div>
+      
+    </div>  <!-- field-items -->
+  </div>
+  
+  
+  
+  <div class="model">
+    <h3 class="field-label"><a name="NAThermMeasure">NAThermMeasure</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">time </div><div class="param-desc"><span class="param-type">Integer</span> </div>
+      <div class="param">temperature </div><div class="param-desc"><span class="param-type">Float</span> </div>
+      <div class="param">setpoint_temp </div><div class="param-desc"><span class="param-type">Float</span> </div>
+      
+    </div>  <!-- field-items -->
+  </div>
+  
+  
+  
+  <div class="model">
+    <h3 class="field-label"><a name="NAObject">NAObject</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">$id </div><div class="param-desc"><span class="param-type">String</span> </div>
+      
+    </div>  <!-- field-items -->
+  </div>
+  
+  
+  </body>
+</html>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="io.swagger.netatmo.test.StationApiTest" tests="5" skipped="4" failures="0" errors="0" timestamp="2015-10-12T11:27:53" hostname="cbornet-VirtualBox" time="0.173">
+  <properties/>
+  <testcase name="testGetUser" classname="io.swagger.netatmo.test.StationApiTest" time="0.064"/>
+  <testcase name="testDeviceList" classname="io.swagger.netatmo.test.StationApiTest" time="0.03">
+    <skipped/>
+  </testcase>
+  <testcase name="testGetMeasureStation" classname="io.swagger.netatmo.test.StationApiTest" time="0.01">
+    <skipped/>
+  </testcase>
+  <testcase name="testGetMeasureWindGauge" classname="io.swagger.netatmo.test.StationApiTest" time="0.002">
+    <skipped/>
+  </testcase>
+  <testcase name="testGetMeasureRainSensor" classname="io.swagger.netatmo.test.StationApiTest" time="0.02">
+    <skipped/>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
