@@ -3,3 +3,4 @@
 /.classpath
 /.project
 /.settings/
+src/test/resources/unittest.properties
