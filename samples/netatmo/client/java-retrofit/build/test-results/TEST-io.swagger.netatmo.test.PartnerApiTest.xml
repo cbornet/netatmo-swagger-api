@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="io.swagger.netatmo.test.PartnerApiTest" tests="1" skipped="1" failures="0" errors="0" timestamp="2015-10-12T11:27:53" hostname="cbornet-VirtualBox" time="0.034">
-  <properties/>
-  <testcase name="testPartnerDevices" classname="io.swagger.netatmo.test.PartnerApiTest" time="0.034">
-    <skipped/>
-  </testcase>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
