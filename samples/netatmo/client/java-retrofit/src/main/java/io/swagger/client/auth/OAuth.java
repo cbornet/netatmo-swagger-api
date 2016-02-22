@@ -34,12 +34,8 @@ public class OAuth implements Interceptor {
         this.tokenRequestBuilder = requestBuilder;
     }
 
-    public OAuth(TokenRequestBuilder requestBuilder ) {
-        this(new OkHttpClient(), requestBuilder);
-    }
-
-    public OAuth(OAuthFlow flow, String authorizationUrl, String tokenUrl, String scopes) {
-        this(OAuthClientRequest.tokenLocation(tokenUrl).setScope(scopes));
+    public OAuth(OkHttpClient client, OAuthFlow flow, String authorizationUrl, String tokenUrl, String scopes) {
+        this(client, OAuthClientRequest.tokenLocation(tokenUrl).setScope(scopes));
         setFlow(flow);
         authenticationRequestBuilder = OAuthClientRequest.authorizationLocation(authorizationUrl);
     }
