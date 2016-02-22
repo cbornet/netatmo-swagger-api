@@ -36,15 +36,25 @@ public class ApiClient {
     private Map<String, Interceptor> apiAuthorizations;
     private OkHttpClient okClient;
     private RestAdapter.Builder adapterBuilder;
+    private boolean bypassCert = false;
 
     public ApiClient() {
         apiAuthorizations = new LinkedHashMap<String, Interceptor>();
         createDefaultAdapter();
     }
     
-    public ApiClient(String[] authNames) {
+    private OkHttpClient getOkHttpClient() {
+    	if (bypassCert) {
+    		return new TrustingOkHttpClient();
+    	} else {
+    		return new OkHttpClient();
+    	}
+    }
+    
+    public ApiClient(boolean bypassCert, String[] authNames) {
         this();
-        okClient = new OkHttpClient();
+        this.bypassCert = bypassCert;
+        okClient = getOkHttpClient();
         adapterBuilder.setClient(new OkClient(okClient));
         for(String authName : authNames) {
             if (apiAuthorizations.containsKey(authName)) {
@@ -52,10 +62,10 @@ public class ApiClient {
             }
             Interceptor auth;
             if (authName == "code_oauth") { 
-                auth = new OAuth(OAuthFlow.accessCode, "https://api.netatmo.net/oauth2/authorize", "https://api.netatmo.net/oauth2/token", "read_station, write_thermostat, read_thermostat");
+                auth = new OAuth(getOkHttpClient(), OAuthFlow.accessCode, "https://api.netatmo.net/oauth2/authorize", "https://api.netatmo.net/oauth2/token", "read_station, write_thermostat, read_thermostat");
             } else 
             if (authName == "password_oauth") { 
-                auth = new OAuth(OAuthFlow.password, "", "https://api.netatmo.net/oauth2/token", "");
+                auth = new OAuth(getOkHttpClient(), OAuthFlow.password, "", "https://api.netatmo.net/oauth2/token", "");
             } else {
                 throw new RuntimeException("auth name \"" + authName + "\" not found in available auth names");
             }
@@ -68,8 +78,8 @@ public class ApiClient {
      * Basic constructor for single auth name
      * @param authName
      */
-    public ApiClient(String authName) {
-        this(new String[]{authName});
+    public ApiClient(boolean bypassCert,String authName) {
+        this(bypassCert, new String[]{authName});
     }
 
     /**
@@ -77,8 +87,8 @@ public class ApiClient {
      * @param authName
      * @param apiKey
      */
-    public ApiClient(String authName, String apiKey) {
-        this(authName);
+    public ApiClient(boolean bypassCert, String authName, String apiKey) {
+        this(bypassCert, authName);
         this.setApiKey(apiKey);
     }
 
@@ -88,8 +98,8 @@ public class ApiClient {
      * @param username
      * @param password
      */
-    public ApiClient(String authName, String username, String password) {
-        this(authName);
+    public ApiClient(boolean bypassCert, String authName, String username, String password) {
+        this(bypassCert, authName);
         this.setCredentials(username,  password);
     }
 
@@ -101,8 +111,8 @@ public class ApiClient {
      * @param username
      * @param password
      */
-    public ApiClient(String authName, String clientId, String secret, String username, String password) {
-        this(authName);
+    public ApiClient(boolean bypassCert, String authName, String clientId, String secret, String username, String password) {
+        this(bypassCert, authName);
         this.getTokenEndPoint()
                 .setClientId(clientId)
                 .setClientSecret(secret)
@@ -253,7 +263,7 @@ public class ApiClient {
     /**
      * Clones the okClient given in parameter, adds the auth interceptors and uses it to configure the RestAdapter
      * @param okClient
-     */
+     **/
     public void configureFromOkclient(OkHttpClient okClient) {
         OkHttpClient clone = okClient.clone();
         addAuthsToOkClient(clone);

@@ -17,6 +17,7 @@ import io.swagger.client.api.StationApi;
 import io.swagger.client.model.NADevice;
 import io.swagger.client.model.NADeviceListResponse;
 import io.swagger.client.model.NAUserResponse;
+import retrofit.RestAdapter.LogLevel;
 
 public class StationApiTest {
     
@@ -40,13 +41,13 @@ public class StationApiTest {
         rainId = props.getProperty("io.swagger.client.rain");
         windId = props.getProperty("io.swagger.client.wind");
         
-        ApiClient apiClient = new ApiClient("password_oauth",
+        ApiClient apiClient = new ApiClient(props.getProperty("io.swagger.client.bypasscert").equals("true"), "password_oauth",
                 props.getProperty("io.swagger.client.client_id"),
                 props.getProperty("io.swagger.client.client_secret"),
                 props.getProperty("io.swagger.client.username"),
                 props.getProperty("io.swagger.client.password"));
         apiClient.getTokenEndPoint().setScope("read_station");
-        //apiClient.getAdapterBuilder().setLogLevel(LogLevel.FULL);
+        apiClient.getAdapterBuilder().setLogLevel(LogLevel.FULL);
         
         api = apiClient.createService(StationApi.class);
     }

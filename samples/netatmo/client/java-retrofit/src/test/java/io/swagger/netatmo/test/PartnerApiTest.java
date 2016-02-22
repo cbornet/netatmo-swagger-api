@@ -27,7 +27,8 @@ public class PartnerApiTest {
         InputStream is = ClassLoader.getSystemResourceAsStream("unittest.properties");
         props.load(is);
         
-        ApiClient apiClient = new ApiClient("password_oauth",
+        ApiClient apiClient = new ApiClient(props.getProperty("io.swagger.client.bypasscert").equals("true"), 
+        		"password_oauth",
                 props.getProperty("io.swagger.client.client_id"),
                 props.getProperty("io.swagger.client.client_secret"),
                 props.getProperty("io.swagger.client.username"),
